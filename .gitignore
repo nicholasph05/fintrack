@@ -19,6 +19,7 @@ backend/fintrack-backend/target/
 # Environment variables / secrets
 .env
 .env.*
+!.env.example
 backend/fintrack-backend/.env
 
 # Editor directories and files

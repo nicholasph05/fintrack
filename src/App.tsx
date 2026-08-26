@@ -12,10 +12,11 @@ import type { Budget } from './types/Budget'
 import type { SavingsGoal } from './types/SavingsGoal'
 import type { GoalContribution, NewGoalContribution } from './types/GoalContribution'
 import type { Transaction } from './types/Transaction'
+import { API_ENDPOINTS } from './config/api'
 
-const API_URL = 'http://localhost:8080/api/transactions'
-const BUDGET_API_URL = 'http://localhost:8080/api/budgets'
-const SAVINGS_GOAL_API_URL = 'http://localhost:8080/api/savings-goals'
+const API_URL = API_ENDPOINTS.transactions
+const BUDGET_API_URL = API_ENDPOINTS.budgets
+const SAVINGS_GOAL_API_URL = API_ENDPOINTS.savingsGoals
 type NewTransaction = Omit<Transaction, 'id'>
 type NewBudget = Omit<Budget, 'id'>
 type NewSavingsGoal = Omit<SavingsGoal, 'id'>

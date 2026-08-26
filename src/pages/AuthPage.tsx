@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
+import { API_ENDPOINTS } from '../config/api'
 
-const AUTH_URL = 'http://localhost:8080/api/auth'
+const AUTH_URL = API_ENDPOINTS.auth
 
 type Props = { onAuthenticated: (token: string, isRegistration: boolean) => void }
 
