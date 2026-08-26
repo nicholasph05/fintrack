@@ -15,22 +15,36 @@ Actualmente se encuentra en desarrollo y hace parte de mi portafolio como proyec
 * Vite
 * CSS
 * Recharts
+* Nginx
 
 ### Backend
 
 * Java 21
 * Spring Boot
-* Spring Web
-* Spring Data JPA
 * Spring Security
+* Spring Data JPA
+* Hibernate
 * JWT
 * BCrypt
+* OpenAPI / Swagger
+* JUnit 5
+* Mockito
 * Maven
-
+  
 ### Base de datos
 
 * PostgreSQL
 * Hibernate / JPA
+* Supabase
+
+### DevOps y despliegue
+
+* Docker
+* Docker Compose
+* GitHub Actions
+* CI/CD
+* Vercel
+* Railway
 
 ### Herramientas
 
@@ -229,8 +243,9 @@ La aplicación está desplegada en:
 
 Además, el proyecto puede ejecutarse localmente con Docker Compose mediante:
 
-bash
+```bash
 docker compose up --build
+```
 
 ## Estado del proyecto
 
