@@ -197,6 +197,41 @@ FinTrack continúa en desarrollo. Entre las funcionalidades y mejoras planeadas 
 * Integración y despliegue continuo (CI/CD).
 * Despliegue del frontend, backend y base de datos en la nube.
 
+
+### Demo
+
+## Aplicación:
+https://fintrack-phi-tan.vercel.app
+
+## API / Swagger:
+https://fintrack-production-c920.up.railway.app/swagger-ui/index.html
+
+## CI/CD y despliegue
+
+FinTrack cuenta con un flujo de integración continua mediante GitHub Actions.
+
+En cada push o pull request hacia `main` se ejecutan automáticamente:
+
+- Frontend:
+  - `npm ci`
+  - `npm run lint`
+  - `npm run build`
+
+- Backend:
+  - `mvn test`
+  - 27 pruebas unitarias con JUnit 5 y Mockito
+
+La aplicación está desplegada en:
+
+- Frontend: Vercel
+- Backend: Railway
+- Base de datos: Supabase PostgreSQL
+
+Además, el proyecto puede ejecutarse localmente con Docker Compose mediante:
+
+bash
+docker compose up --build
+
 ## Estado del proyecto
 
 En desarrollo.
