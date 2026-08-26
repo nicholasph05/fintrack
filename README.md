@@ -109,10 +109,11 @@ React + TypeScript
 Spring Boot
         ↓
 PostgreSQL
-Seguridad
+
+
+## Seguridad
 
 FinTrack implementa autenticación basada en JWT.
-
 
 Cada usuario solamente puede consultar, modificar o eliminar sus propios recursos, incluyendo:
 
