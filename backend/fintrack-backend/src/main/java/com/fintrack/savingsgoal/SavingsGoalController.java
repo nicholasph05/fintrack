@@ -1,5 +1,8 @@
 package com.fintrack.savingsgoal;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
@@ -17,6 +20,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/savings-goals")
+@Tag(name = "Metas de ahorro", description = "Gestión de metas de ahorro del usuario")
+@SecurityRequirement(name = "bearerAuth")
 public class SavingsGoalController {
 
     private final SavingsGoalService savingsGoalService;
@@ -26,11 +31,13 @@ public class SavingsGoalController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar metas de ahorro")
     public List<SavingsGoalResponse> getAllSavingsGoals(Authentication authentication) {
         return savingsGoalService.getAllSavingsGoals(authentication.getName());
     }
 
     @PostMapping
+    @Operation(summary = "Crear una meta de ahorro")
     public SavingsGoalResponse createSavingsGoal(
             @Valid @RequestBody SavingsGoalRequest request,
             Authentication authentication
@@ -39,6 +46,7 @@ public class SavingsGoalController {
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Actualizar una meta de ahorro")
     public SavingsGoalResponse updateSavingsGoal(
             @PathVariable Long id,
             @Valid @RequestBody SavingsGoalRequest request,
@@ -48,6 +56,7 @@ public class SavingsGoalController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Eliminar una meta de ahorro")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteSavingsGoal(@PathVariable Long id, Authentication authentication) {
         savingsGoalService.deleteSavingsGoal(id, authentication.getName());

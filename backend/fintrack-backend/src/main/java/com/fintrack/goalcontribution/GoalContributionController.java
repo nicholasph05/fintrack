@@ -1,5 +1,8 @@
 package com.fintrack.goalcontribution;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
@@ -16,6 +19,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/savings-goals/{goalId}/contributions")
+@Tag(name = "Aportes a metas", description = "Gestión de aportes a las metas de ahorro")
+@SecurityRequirement(name = "bearerAuth")
 public class GoalContributionController {
 
     private final GoalContributionService contributionService;
@@ -25,6 +30,7 @@ public class GoalContributionController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar aportes de una meta")
     public List<GoalContributionResponse> getContributions(
             @PathVariable Long goalId,
             Authentication authentication
@@ -33,6 +39,7 @@ public class GoalContributionController {
     }
 
     @PostMapping
+    @Operation(summary = "Registrar un aporte en una meta")
     public GoalContributionResponse createContribution(
             @PathVariable Long goalId,
             @Valid @RequestBody GoalContributionRequest request,
@@ -42,6 +49,7 @@ public class GoalContributionController {
     }
 
     @DeleteMapping("/{contributionId}")
+    @Operation(summary = "Eliminar un aporte de una meta")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteContribution(
             @PathVariable Long goalId,

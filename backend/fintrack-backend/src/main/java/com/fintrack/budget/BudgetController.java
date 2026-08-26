@@ -1,5 +1,8 @@
 package com.fintrack.budget;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
@@ -17,6 +20,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/budgets")
+@Tag(name = "Presupuestos", description = "Gestión de presupuestos del usuario")
+@SecurityRequirement(name = "bearerAuth")
 public class BudgetController {
 
     private final BudgetService budgetService;
@@ -26,11 +31,13 @@ public class BudgetController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar presupuestos")
     public List<BudgetResponse> getAllBudgets(Authentication authentication) {
         return budgetService.getAllBudgets(authentication.getName());
     }
 
     @PostMapping
+    @Operation(summary = "Crear un presupuesto")
     public BudgetResponse createBudget(
             @Valid @RequestBody BudgetRequest request,
             Authentication authentication
@@ -39,6 +46,7 @@ public class BudgetController {
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Actualizar un presupuesto")
     public BudgetResponse updateBudget(
             @PathVariable Long id,
             @Valid @RequestBody BudgetRequest request,
@@ -48,6 +56,7 @@ public class BudgetController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Eliminar un presupuesto")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBudget(@PathVariable Long id, Authentication authentication) {
         budgetService.deleteBudget(id, authentication.getName());
