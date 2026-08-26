@@ -91,18 +91,18 @@ Actualmente se encuentra en desarrollo y hace parte de mi portafolio como proyec
 
 ## Dashboard
 
-<img src="C:\Users\nicho\Desktop\FinTrack\docs\images\Dashboard_1.png" alt="Dashboard de FinTrack" width="900">
+<img src="docs/images/Dashboard_1.png" alt="Dashboard de FinTrack" width="900">
 
-<img src="C:\Users\nicho\Desktop\FinTrack\docs\images\Dashboard_2.png" alt="Dashboard de FinTrack" width="900">
+<img src="docs/images/Dashboard_2.png" alt="Dashboard de FinTrack" width="900">
 
 
 ## Presupuestos
 
-<img src="C:\Users\nicho\Desktop\FinTrack\docs\images\Presupuestos_1.png" alt="Presupuestos de FinTrack" width="900">
+<img src="docs/images/Presupuestos_1.png" alt="Presupuestos de FinTrack" width="900">
 
 ## Metas de ahorro
 
-<img src="C:\Users\nicho\Desktop\FinTrack\docs\images\Metas_Ahorro_1.png" alt="Metas de ahorro de FinTrack" width="900">
+<img src="docs/images/Metas_Ahorro_1.png" alt="Metas de ahorro de FinTrack" width="900">
 
 ## Arquitectura
 
